@@ -1,16 +1,1 @@
-// Reproducer for TKA-10324
-// Gradle 9 project using toolchain-only Java configuration
-// (no sourceCompatibility / targetCompatibility)
-//
-// The scanner fails with:
-//   Cannot find a Java installation matching: {languageVersion=17}
-//   Toolchain download repositories have not been configured.
-
-rootProject.name = 'gradle9-toolchain-only'
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        mavenCentral()
-    }
-}
+rootProject.name = 'poc-parent'

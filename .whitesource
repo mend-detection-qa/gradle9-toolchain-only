@@ -1,12 +1,13 @@
 {
   "scanSettings": {
-    "configMode": "AUTO",
+    "configMode": "LOCAL",
     "configExternalURL": "",
     "projectToken": "",
     "baseBranches": [],
-     "versioning": {
-      "java": "17.0.19+10"
-}
+    "versioning": {    
+      "java": "21",  
+      "gradle": ">=9.0.0"   
+    }
   },
   "checkRunSettings": {
     "vulnerableCheckRunConclusionLevel": "failure",
@@ -19,9 +20,7 @@
   },
   "remediateSettings": {
     "workflowRules": {
-      "enabled": false
+      "enabled": true
     }
   }
 }
-
-

@@ -4,12 +4,12 @@
   "pm_version_tested": "9.0.0",
   "source_file": "https://github.com/mend-detection-qa/gradle9-toolchain-only/blob/main/build.gradle",
   "root": {
-    "name": "com.example:gradle9-toolchain-only",
-    "version": "1.0.0",
+    "name": "com.poc:poc-parent",
+    "version": "1.0.0-SNAPSHOT",
     "dependencies": [
       {
-        "name": "org.slf4j:slf4j-api",
-        "version": "2.0.13",
+        "name": "org.apache.commons:commons-lang3",
+        "version": "3.14.0",
         "scope": "compile",
         "direct": true,
         "dependencies": []
@@ -59,57 +59,6 @@
             "name": "com.google.j2objc:j2objc-annotations",
             "version": "3.0.0",
             "scope": "compile",
-            "direct": false,
-            "dependencies": []
-          }
-        ]
-      },
-      {
-        "name": "com.fasterxml.jackson.core:jackson-databind",
-        "version": "2.17.1",
-        "scope": "compile",
-        "direct": true,
-        "dependencies": [
-          {
-            "name": "com.fasterxml.jackson.core:jackson-annotations",
-            "version": "2.17.1",
-            "scope": "compile",
-            "direct": false,
-            "dependencies": []
-          },
-          {
-            "name": "com.fasterxml.jackson.core:jackson-core",
-            "version": "2.17.1",
-            "scope": "compile",
-            "direct": false,
-            "dependencies": []
-          }
-        ]
-      },
-      {
-        "name": "org.apache.commons:commons-lang3",
-        "version": "3.14.0",
-        "scope": "compile",
-        "direct": true,
-        "dependencies": []
-      },
-      {
-        "name": "ch.qos.logback:logback-classic",
-        "version": "1.5.6",
-        "scope": "runtime",
-        "direct": true,
-        "dependencies": [
-          {
-            "name": "ch.qos.logback:logback-core",
-            "version": "1.5.6",
-            "scope": "runtime",
-            "direct": false,
-            "dependencies": []
-          },
-          {
-            "name": "org.slf4j:slf4j-api",
-            "version": "2.0.13",
-            "scope": "runtime",
             "direct": false,
             "dependencies": []
           }

@@ -1,5 +1,5 @@
 {
-  "_comment": "Autotest config for gradle9-toolchain-only. TKA-10324 root cause was a broken Java toolchain pin (17.0.11+9.0.LTS → 404 on api.adoptium.net). .whitesource now pins java=17.0.19+10 and gradle=9.0.0, so the scanner SHOULD resolve all 5 direct deps and 9 transitives.",
+  "_comment": "Autotest config for gradle9-toolchain-only (POC-aligned). build.gradle declares 2 implementation deps (commons-lang3, guava) + JUnit 4 testImplementation. The build.gradle toolchain-only Java 17 config does NOT block dependency resolution (Mend runs the `dependencies` task, not compileJava). .whitesource versioning pins java=21 / gradle>=9.0.0 as the manual-versioning fix for TKA-10324. Test scope deps are excluded by convention.",
   "_tka": "https://mend-io.atlassian.net/browse/TKA-10324",
   "description": "Autotest configuration file for dependency tree detection validation",
   "version": 1.7,
@@ -8,7 +8,7 @@
     "scan_output": {
       "_security_scan_report_conclusion": "success",
       "total_libs_scanned": {
-        "gte": 11
+        "gte": 5
       },
       "expected_messages": []
     },
@@ -17,21 +17,18 @@
       "check_dependency_tree_detection_status": true,
       "check_update_request_sca_results": true,
       "expected_total_dependencies_number": {
-        "gte": 11
+        "gte": 5
       },
       "expected_direct_dependencies_number": {
-        "eq": 5
+        "eq": 2
       },
       "expected_transitive_dependencies_number": {
-        "gte": 6
+        "gte": 3
       },
       "direct_dependencies_names_list": {
         "eq": [
-          "slf4j-api",
-          "guava",
-          "jackson-databind",
           "commons-lang3",
-          "logback-classic"
+          "guava"
         ]
       },
       "transitive_dependencies_names_list": {
@@ -41,10 +38,7 @@
           "jsr305",
           "checker-qual",
           "error_prone_annotations",
-          "j2objc-annotations",
-          "jackson-annotations",
-          "jackson-core",
-          "logback-core"
+          "j2objc-annotations"
         ]
       },
       "expected_package_managers": {
